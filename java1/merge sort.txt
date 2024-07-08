@@ -1,0 +1,17 @@
+sort() function 
+sort([x])=[x]
+sort([x,y])=[x,y] if x<y
+	   = [y,x] otherwise
+
+Example: sort([3,7,1,9,8,4,5])
+mid =6/2=3
+       = merge(sort([3,7,1,9]) , sort([8,4,5]))
+left-mid =3/2=1.5=1
+	= merge(merge(sort([3,7]) , sort([1,9])))
+	=merge(merge([3,7] , [1,9]))
+	=merge([1,3,7,9] , sort([8,4,5]))
+right-mid = 2/2=1
+	=merge([1,3,7,9] , merge(sort([8,4]) , sort([5]))
+	=merge([1,3,7,9] , merge(sort([4,8]) , sort([5]))
+	=merge([1,3,7,9] , [4,5,8])
+	=[1,3,4,5,7,8,9]
